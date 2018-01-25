@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.idea/
+StatusView/src/androidTest/
+StatusView/src/test/
+StatusView/.gitignore
+app/.gitignore
