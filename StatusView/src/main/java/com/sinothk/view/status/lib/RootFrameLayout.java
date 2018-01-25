@@ -1,4 +1,4 @@
-package com.sinothk.view.status;
+package com.sinothk.view.status.lib;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -255,7 +255,7 @@ public class RootFrameLayout extends FrameLayout {
         retryView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                mStatusLayoutManager.onRetryListener.onRetry();
+                mStatusLayoutManager.onRetryListener.onRetry(v);
             }
         });
     }

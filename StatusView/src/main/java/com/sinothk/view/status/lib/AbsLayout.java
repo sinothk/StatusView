@@ -1,4 +1,4 @@
-package com.sinothk.view.status;
+package com.sinothk.view.status.lib;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
