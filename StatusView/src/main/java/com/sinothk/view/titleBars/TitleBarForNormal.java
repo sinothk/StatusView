@@ -83,4 +83,12 @@ public class TitleBarForNormal {
             titleBarTxt.setTextColor(resources.getColor(txtColor));
         }
     }
+
+    public static void setTitleBg(int titleBgId) {
+        if (titleBarView != null && titleBgId > 0) {
+            titleBarView.setBackgroundResource(titleBgId);
+
+
+        }
+    }
 }

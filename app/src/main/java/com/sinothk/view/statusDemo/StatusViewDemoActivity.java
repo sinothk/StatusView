@@ -32,10 +32,12 @@ public class StatusViewDemoActivity extends AppCompatActivity {
                 Toast.makeText(StatusViewDemoActivity.this, "onRetry2", Toast.LENGTH_SHORT).show();
             }
         }));
-        //=========================================================================================================
+        //===========================================标题部分==============================================================
 //        TitleBarForNormal.setTitle("SINOTHK");
 //        TitleBarForNormal.setTitle(R.string.app_name, R.color.black);
-        TitleBarForNormal.setTitle(R.string.app_name, R.color.black);
+        TitleBarForNormal.setTitle("華維公社", R.color.white);
+        TitleBarForNormal.setTitleBg(R.color.colorAccent);
+
         //=============================================处理内容============================================================
         // 状态布局调用
         StatusViewForNormal.showLoading();
