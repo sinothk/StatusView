@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dm086"
     android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/titleBarRightImgView"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dm086"
         android:layout_alignParentEnd="true"
-        android:gravity="center">
+        android:gravity="center"
+        android:visibility="gone">
 
         <ImageView
+            android:id="@+id/titleBarRightIv0"
             android:layout_width="@dimen/dm086"
             android:layout_height="@dimen/dm086"
             android:padding="4dp"
             app:srcCompat="@android:drawable/btn_star_big_on" />
 
         <ImageView
+            android:id="@+id/titleBarRightIv1"
             android:layout_width="@dimen/dm086"
             android:layout_height="@dimen/dm086"
             android:padding="4dp"
@@ -26,9 +31,43 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/titleBarRightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dm086"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/titleBarRightTv0"
+            android:layout_width="@dimen/dm086"
+            android:layout_height="@dimen/dm086"
+            android:gravity="center"
+            android:maxEms="2"
+            android:maxLines="1"
+            android:text="更多"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/dm025"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/titleBarRightTv1"
+            android:layout_width="@dimen/dm096"
+            android:layout_height="@dimen/dm086"
+            android:gravity="center"
+            android:maxEms="2"
+            android:maxLines="1"
+            android:text="设置"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/dm025" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/titleBarLeftView"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dm086"
         android:layout_alignParentStart="true"
+        android:clickable="true"
         android:gravity="center">
 
         <ImageView
@@ -39,15 +78,17 @@
             android:src="@android:drawable/btn_star_big_on" />
 
         <TextView
+            android:id="@+id/titleBarLeftTv"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dm086"
             android:gravity="center_vertical"
-            android:maxEms="3"
+            android:maxEms="5"
             android:maxLines="1"
             android:minWidth="@dimen/dm086"
-            android:text="返回"
             android:textColor="#FFFFFF"
-            android:textSize="@dimen/dm025" />
+            android:textSize="@dimen/dm025"
+            android:visibility="visible"
+            tools:text="消息(99+)" />
     </LinearLayout>
 
 
@@ -60,7 +101,7 @@
         android:ellipsize="middle"
         android:maxEms="6"
         android:maxLines="1"
-        android:text="发现发现"
         android:textColor="#FFFFFF"
-        android:textSize="@dimen/dm030" />
+        android:textSize="@dimen/dm030"
+        tools:text="发现发现发现发现" />
 </RelativeLayout>

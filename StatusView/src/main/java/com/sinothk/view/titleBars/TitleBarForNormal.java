@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.sinothk.view.status.R;
@@ -23,12 +25,36 @@ public class TitleBarForNormal {
     private static TextView titleBarTxt;
     private static Activity currActivity;
 
-    public static View getView(Activity cActivity) {
+    // 左边
+    private static View.OnClickListener finishListener;
+    private static LinearLayout titleBarLeftView;
+    private static ImageView titleBarLeftIv;
+    private static TextView titleBarLeftTv;
+
+    public static View getView(final Activity cActivity) {
         currActivity = cActivity;
 
         titleBarView = LayoutInflater.from(currActivity).inflate(R.layout.title_bar_for_normal, null);
-
+        // 标题
         titleBarTxt = (TextView) titleBarView.findViewById(R.id.titleBarTxt);
+
+        // 左边
+        titleBarLeftView = (LinearLayout) titleBarView.findViewById(R.id.titleBarLeftView);
+        titleBarLeftIv = (ImageView) titleBarView.findViewById(R.id.titleBarLeftIv);
+        titleBarLeftTv = (TextView) titleBarView.findViewById(R.id.titleBarLeftTv);
+        finishListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (currActivity != null) {
+                    currActivity.finish();
+                }
+            }
+        };
+        titleBarLeftView.setOnClickListener(finishListener);
+
+        // 右边
+//        titleBarRightTextView
+//        titleBarRightImgView
 
         return titleBarView;
     }
@@ -87,8 +113,124 @@ public class TitleBarForNormal {
     public static void setTitleBg(int titleBgId) {
         if (titleBarView != null && titleBgId > 0) {
             titleBarView.setBackgroundResource(titleBgId);
+        }
+    }
 
+    // =============================左边======================================
 
+    /**
+     * 设置左边View的可见性，只能 VISIBLE 或 INVISIBLE ！
+     *
+     * @param visible
+     */
+    public static void setVisible(int visible) {
+        if (titleBarLeftView != null) {
+            if (visible == View.VISIBLE) {
+                titleBarLeftView.setVisibility(View.VISIBLE);
+            } else {
+                titleBarLeftView.setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+    /**
+     * 默认图标,自定义提示,默认退出
+     *
+     * @param titleLeftTxt
+     */
+    public static void setTitleLeft(String titleLeftTxt) {
+        if (titleBarLeftView != null && finishListener != null) {
+            titleBarLeftView.setOnClickListener(finishListener);
+            titleBarLeftView.setVisibility(View.VISIBLE);
+        }
+
+        if (titleBarLeftTv != null && !TextUtils.isEmpty(titleLeftTxt)) {
+            titleBarLeftTv.setVisibility(View.VISIBLE);
+            titleBarLeftTv.setText(titleLeftTxt);
+        }
+
+    }
+
+    /**
+     * 修改图标,隐藏提示,默认退出
+     *
+     * @param titleLeftImgId
+     */
+    public static void setTitleLeft(int titleLeftImgId) {
+
+        if (titleBarLeftView != null && finishListener != null) {
+            titleBarLeftView.setOnClickListener(finishListener);
+            titleBarLeftView.setVisibility(View.VISIBLE);
+        }
+
+        if (titleBarLeftIv != null) {
+            titleBarLeftIv.setImageResource(titleLeftImgId);
+        }
+        if (titleBarLeftTv != null) {
+            titleBarLeftTv.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    /**
+     * 修改图标,隐藏提示,自定义事件
+     *
+     * @param titleLeftImgId
+     * @param onLeftClickListener
+     */
+    public static void setTitleLeft(int titleLeftImgId, View.OnClickListener onLeftClickListener) {
+        if (titleBarLeftView != null && onLeftClickListener != null) {
+            titleBarLeftView.setOnClickListener(onLeftClickListener);
+            titleBarLeftView.setVisibility(View.VISIBLE);
+        }
+
+        if (titleBarLeftIv != null) {
+            titleBarLeftIv.setImageResource(titleLeftImgId);
+        }
+        if (titleBarLeftTv != null) {
+            titleBarLeftTv.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    /**
+     * 修改图标,自定提示,默认退出
+     *
+     * @param titleLeftImgId
+     * @param titleLeftTxt
+     */
+    public static void setTitleLeft(int titleLeftImgId, String titleLeftTxt) {
+        if (titleBarLeftView != null && finishListener != null) {
+            titleBarLeftView.setOnClickListener(finishListener);
+            titleBarLeftView.setVisibility(View.VISIBLE);
+        }
+
+        if (titleBarLeftIv != null) {
+            titleBarLeftIv.setImageResource(titleLeftImgId);
+        }
+
+        if (titleBarLeftTv != null && !TextUtils.isEmpty(titleLeftTxt)) {
+            titleBarLeftTv.setVisibility(View.VISIBLE);
+            titleBarLeftTv.setText(titleLeftTxt);
+        }
+    }
+
+    /**
+     * 修改图标,自定提示,自定义事件
+     *
+     * @param titleLeftImgId
+     * @param titleLeftTxt
+     * @param onLeftClickListener
+     */
+    public static void setTitleLeft(int titleLeftImgId, String titleLeftTxt, View.OnClickListener onLeftClickListener) {
+        if (titleBarLeftView != null && onLeftClickListener != null) {
+            titleBarLeftView.setOnClickListener(onLeftClickListener);
+            titleBarLeftView.setVisibility(View.VISIBLE);
+        }
+        if (titleBarLeftIv != null) {
+            titleBarLeftIv.setImageResource(titleLeftImgId);
+        }
+        if (titleBarLeftTv != null && !TextUtils.isEmpty(titleLeftTxt)) {
+            titleBarLeftTv.setVisibility(View.VISIBLE);
+            titleBarLeftTv.setText(titleLeftTxt);
         }
     }
 }

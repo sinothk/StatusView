@@ -38,6 +38,28 @@ public class StatusViewDemoActivity extends AppCompatActivity {
         TitleBarForNormal.setTitle("華維公社", R.color.white);
         TitleBarForNormal.setTitleBg(R.color.colorAccent);
 
+        // 左边
+//        TitleBarForNormal.setVisible(View.VISIBLE);
+        TitleBarForNormal.setTitleLeft(R.mipmap.ic_launcher, "消息(99+)");
+//        TitleBarForNormal.setTitleLeft(1, new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+//
+//        TitleBarForNormal.setTitleLeft(1, "");
+//        TitleBarForNormal.setTitleLeft(1, "", new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//
+//            }
+//        });
+        // 右边
+
+
         //=============================================处理内容============================================================
         // 状态布局调用
         StatusViewForNormal.showLoading();
