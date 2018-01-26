@@ -29,6 +29,77 @@ public class StatusViewForNormal {
     }
 
     /**
+     * @param currActivity
+     * @param contentLayoutId
+     * @return
+     */
+    public static View getView(final Activity currActivity, int contentLayoutId) {
+        statusLayoutManager = StatusLayoutManager.newBuilder(currActivity)
+                .contentView(contentLayoutId) // 内容布局
+                .emptyDataView(R.layout.status_view_empty_layout) // 数据为空
+                .errorView(R.layout.status_view_error_layout) // 加载出错
+                .loadingView(R.layout.status_view_loading_layout) // 加载动画
+                .netWorkErrorView(R.layout.status_view_network_error_layout) // 网络错误
+                .retryViewId(R.id.button_retry) // 点击重试的id
+                .onShowHideViewListener(new OnShowHideViewListener() {
+                    @Override
+                    public void onShowView(View view, int id) {
+                    }
+
+                    @Override
+                    public void onHideView(View view, int id) {
+                    }
+                })
+                .onRetryListener(new OnRetryListener() {
+                    @Override
+                    public void onRetry(View view) {
+                        if (onRetryListener != null) {
+                            onRetryListener.onClick(view);
+                        }
+                    }
+                })
+                .build();
+
+        return statusLayoutManager.getRootLayout();
+    }
+
+    /**
+     * @param currActivity    当前Activity
+     * @param contentLayoutId 内容布局Id
+     * @param onClickListener 重试点击事件
+     * @return
+     */
+    public static View getView(final Activity currActivity, int contentLayoutId, final View.OnClickListener onClickListener) {
+        statusLayoutManager = StatusLayoutManager.newBuilder(currActivity)
+                .contentView(contentLayoutId) // 内容布局
+                .emptyDataView(R.layout.status_view_empty_layout) // 数据为空
+                .errorView(R.layout.status_view_error_layout) // 加载出错
+                .loadingView(R.layout.status_view_loading_layout) // 加载动画
+                .netWorkErrorView(R.layout.status_view_network_error_layout) // 网络错误
+                .retryViewId(R.id.button_retry) // 点击重试的id
+                .onShowHideViewListener(new OnShowHideViewListener() {
+                    @Override
+                    public void onShowView(View view, int id) {
+                    }
+
+                    @Override
+                    public void onHideView(View view, int id) {
+                    }
+                })
+                .onRetryListener(new OnRetryListener() {
+                    @Override
+                    public void onRetry(View view) {
+                        if (onClickListener != null) {
+                            onClickListener.onClick(view);
+                        }
+                    }
+                })
+                .build();
+
+        return statusLayoutManager.getRootLayout();
+    }
+
+    /**
      * @param currActivity    当前Activity
      * @param contentLayoutId 内容布局Id
      * @return
