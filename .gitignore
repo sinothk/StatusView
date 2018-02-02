@@ -12,3 +12,4 @@ StatusView/src/androidTest/
 StatusView/src/test/
 StatusView/.gitignore
 app/.gitignore
+*.apk
