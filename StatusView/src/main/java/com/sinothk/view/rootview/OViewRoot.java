@@ -47,7 +47,7 @@ public class OViewRoot {
      * @param contentView
      * @return View
      */
-    public static View createView4Activity(Activity currActivity, View titleBarView, View contentView) {
+    public static View createView(Activity currActivity, View titleBarView, View contentView) {
         // 1. 设置View的LayoutID
         currActivity.setContentView(R.layout.view_root_layout);
 

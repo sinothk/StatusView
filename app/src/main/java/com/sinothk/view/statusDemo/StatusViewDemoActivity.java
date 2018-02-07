@@ -18,7 +18,7 @@ public class StatusViewDemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //1.在Activity中使用,添加标题和内容方式
-        OViewRoot.createView4Activity(this, TitleBarForNormal.getView(this), StatusView.getNormalView(this, R.layout.activity_content, new View.OnClickListener() {
+        OViewRoot.createView(this, TitleBarForNormal.getView(this), StatusView.getNormalView(this, R.layout.activity_content, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(StatusViewDemoActivity.this, "onRetry2", Toast.LENGTH_SHORT).show();
