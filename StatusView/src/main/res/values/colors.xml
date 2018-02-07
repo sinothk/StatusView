@@ -5,4 +5,7 @@
     <color name="colorPrimary">@color/titleBg</color>
     <color name="colorPrimaryDark">@color/titleBg</color>
     <color name="colorAccent">@color/titleBg</color>
+
+    <color name="statusContentBg">#FBFBFB</color>
+    <color name="statusTipTxtColor">#BBBBBB</color>
 </resources>

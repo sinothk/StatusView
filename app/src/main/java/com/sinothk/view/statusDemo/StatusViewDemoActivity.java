@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.sinothk.view.rootview.ORootView;
-import com.sinothk.view.status.statusViews.StatusViewForNormal;
+import com.sinothk.view.rootview.OViewRoot;
+import com.sinothk.view.status.statusViews.StatusView;
 import com.sinothk.view.titleBars.TitleBarForNormal;
 
 public class StatusViewDemoActivity extends AppCompatActivity {
@@ -16,22 +16,23 @@ public class StatusViewDemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 添加标题和内容方式1
-        ORootView.createView(this, TitleBarForNormal.getView(this), StatusViewForNormal.getView(this, R.layout.activity_content));
-        StatusViewForNormal.setOnRetryListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(StatusViewDemoActivity.this, "onRetry", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        // 添加标题和内容方式2
-        ORootView.createView(this, TitleBarForNormal.getView(this), StatusViewForNormal.getView(this, R.layout.activity_content, new View.OnClickListener() {
+        //1.在Activity中使用,添加标题和内容方式
+        OViewRoot.createView4Activity(this, TitleBarForNormal.getView(this), StatusView.getNormalView(this, R.layout.activity_content, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(StatusViewDemoActivity.this, "onRetry2", Toast.LENGTH_SHORT).show();
             }
         }));
+
+//        //2. 在Fragment或Activity不要标题的场景中使用,添加标题和内容方式
+//        OViewRoot.createView4Fragment(this, StatusView.getNormalView(this, R.layout.activity_content, new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(StatusViewDemoActivity.this, "onRetry2", Toast.LENGTH_SHORT).show();
+//            }
+//        }));
+
         //===========================================标题部分==============================================================
 //        TitleBarForNormal.setTitle("SINOTHK");
 //        TitleBarForNormal.setTitle(R.string.app_name, R.color.black);
@@ -62,7 +63,8 @@ public class StatusViewDemoActivity extends AppCompatActivity {
 
         //=============================================处理内容============================================================
         // 状态布局调用
-        StatusViewForNormal.showLoading();
+//        StatusView.showLoading();
+        StatusView.showLoading("拼命加载中...");
 
         new Handler().postDelayed(
                 new Runnable() {
@@ -71,11 +73,25 @@ public class StatusViewDemoActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                StatusViewForNormal.showError();
+                                // 错误
+//                                StatusView.showError();
+//                                StatusView.showError(R.mipmap.ic_launcher);
+                                StatusView.showError("服务器错误");
+//                                StatusView.showError(R.mipmap.ic_launcher, "服务器错误");
+                                // 网络
+//                                StatusView.showNetWorkError();
+//                                  StatusView.showNetWorkError(R.mipmap.ic_launcher);
+//                                StatusView.showNetWorkError("网络断开");
+//                                StatusView.showNetWorkError(R.mipmap.ic_launcher, "网络断开le");
+                                // 无数据
+//                                StatusView.showEmptyData();
+//                                StatusView.showEmptyData("暂无数据");
+//                                StatusView.showEmptyData(R.mipmap.ic_launcher);
+//                                StatusView.showEmptyData(R.mipmap.ic_launcher, "暂无数据");
                             }
                         });
                     }
-                }, 5000);
+                }, 3000);
 
         // 业务内容activity_content.zml中的组件调用
         Button button = (Button) this.findViewById(R.id.button);

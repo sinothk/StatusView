@@ -11,30 +11,44 @@ import android.view.ViewStub;
  */
 public class StatusLayoutManager {
 
-     final Context context;
-     final ViewStub netWorkErrorVs;
-     final int netWorkErrorRetryViewId;
-     final ViewStub emptyDataVs;
-     final int emptyDataRetryViewId;
-     final ViewStub errorVs;
-     final int errorRetryViewId;
-     final int loadingLayoutResId;
-     final int contentLayoutResId;
-     final int retryViewId;
-     final int emptyDataIconImageId;
-     final int emptyDataTextTipId;
+    final Context context;
+    final ViewStub netWorkErrorVs;
+    final int netWorkErrorRetryViewId;
+    final int netWorkErrorIconImageId;
+    final int netWorkErrorTextTipId;
+
+    final ViewStub emptyDataVs;
+    final int emptyDataRetryViewId;
+    final ViewStub errorVs;
+    final int errorRetryViewId;
+    // 加载View
+    final int loadingLayoutResId;
+    final int loadingIconImageId;
+    final int loadingTextTipId;
+
+    final int contentLayoutResId;
+    final int retryViewId;
+
+    final int emptyDataIconImageId;
+    final int emptyDataTextTipId;
+
     final int errorIconImageId;
     final int errorTextTipId;
+
     final AbsLayout errorLayout;
     final AbsLayout emptyDataLayout;
 
-     final RootFrameLayout rootFrameLayout;
-     final OnShowHideViewListener onShowHideViewListener;
-     final OnRetryListener onRetryListener;
+    final RootFrameLayout rootFrameLayout;
+    final OnShowHideViewListener onShowHideViewListener;
+    final OnRetryListener onRetryListener;
 
     public StatusLayoutManager(Builder builder) {
         this.context = builder.context;
+
         this.loadingLayoutResId = builder.loadingLayoutResId;
+        this.loadingIconImageId = builder.loadingIconImageId;
+        this.loadingTextTipId = builder.loadingTextTipId;
+
         this.netWorkErrorVs = builder.netWorkErrorVs;
         this.netWorkErrorRetryViewId = builder.netWorkErrorRetryViewId;
         this.emptyDataVs = builder.emptyDataVs;
@@ -52,6 +66,9 @@ public class StatusLayoutManager {
         this.errorLayout = builder.errorLayout;
         this.emptyDataLayout = builder.emptyDataLayout;
 
+        this.netWorkErrorIconImageId = builder.netWorkErrorIconImageId;
+        this.netWorkErrorTextTipId = builder.netWorkErrorTextTipId;
+
         rootFrameLayout = new RootFrameLayout(this.context);
         rootFrameLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 
@@ -60,21 +77,24 @@ public class StatusLayoutManager {
 
 
     /**
-     *  显示loading
+     * 显示loading
      */
     public void showLoading() {
         rootFrameLayout.showLoading();
     }
+    public void showLoading(String errorInfo) {
+        rootFrameLayout.showLoading(errorInfo);
+    }
 
     /**
-     *  显示内容
+     * 显示内容
      */
     public void showContent() {
         rootFrameLayout.showContent();
     }
 
     /**
-     *  显示空数据
+     * 显示空数据
      */
     public void showEmptyData(int iconImage, String textTip) {
         rootFrameLayout.showEmptyData(iconImage, textTip);
@@ -84,19 +104,35 @@ public class StatusLayoutManager {
         showEmptyData(0, "");
     }
 
+    public void showEmptyData(String textTip) {
+        showEmptyData(0, textTip);
+    }
+
+    public void showEmptyData(int imgId) {
+        showEmptyData(imgId, "");
+    }
+
     public void showLayoutEmptyData(Object... objects) {
         rootFrameLayout.showLayoutEmptyData(objects);
     }
 
     /**
-     *  显示网络异常
+     * 显示网络异常
      */
     public void showNetWorkError() {
         rootFrameLayout.showNetWorkError();
     }
 
+    public void showNetWorkError(String errorInfo) {
+        rootFrameLayout.showNetWorkError(0, errorInfo);
+    }
+
+    public void showNetWorkError(int imgId, String errorInfo) {
+        rootFrameLayout.showNetWorkError(imgId, errorInfo);
+    }
+
     /**
-     *  显示异常
+     * 显示异常
      */
     public void showError(int iconImage, String textTip) {
         rootFrameLayout.showError(iconImage, textTip);
@@ -106,25 +142,34 @@ public class StatusLayoutManager {
         showError(0, "");
     }
 
+    public void showError(String textTip) {
+        showError(0, textTip);
+    }
+
     public void showLayoutError(Object... objects) {
         rootFrameLayout.showLayoutError(objects);
     }
 
     /**
-     *  得到root 布局
+     * 得到root 布局
      */
     public View getRootLayout() {
         return rootFrameLayout;
     }
 
-
     public static final class Builder {
 
         private Context context;
         private int loadingLayoutResId;
+        private int loadingIconImageId;
+        private int loadingTextTipId;
+
         private int contentLayoutResId;
         private ViewStub netWorkErrorVs;
         private int netWorkErrorRetryViewId;
+        private int netWorkErrorIconImageId;
+        private int netWorkErrorTextTipId;
+
         private ViewStub emptyDataVs;
         private int emptyDataRetryViewId;
         private ViewStub errorVs;
@@ -145,6 +190,16 @@ public class StatusLayoutManager {
 
         public Builder loadingView(@LayoutRes int loadingLayoutResId) {
             this.loadingLayoutResId = loadingLayoutResId;
+            return this;
+        }
+
+        public Builder loadingIconImageId(int loadingIconImageId) {
+            this.loadingIconImageId = loadingIconImageId;
+            return this;
+        }
+
+        public Builder loadingTextTipId(int loadingTextTipId) {
+            this.loadingTextTipId = loadingTextTipId;
             return this;
         }
 
@@ -185,6 +240,16 @@ public class StatusLayoutManager {
 
         public Builder netWorkErrorRetryViewId(int netWorkErrorRetryViewId) {
             this.netWorkErrorRetryViewId = netWorkErrorRetryViewId;
+            return this;
+        }
+
+        public Builder netWorkErrorIconImageId(int netWorkErrorIconImageId) {
+            this.netWorkErrorIconImageId = netWorkErrorIconImageId;
+            return this;
+        }
+
+        public Builder netWorkErrorTextTipId(int netWorkErrorTextTipId) {
+            this.netWorkErrorTextTipId = netWorkErrorTextTipId;
             return this;
         }
 
@@ -239,7 +304,7 @@ public class StatusLayoutManager {
     }
 
     public static Builder newBuilder(Context context) {
-       return new Builder(context);
+        return new Builder(context);
     }
 
 }

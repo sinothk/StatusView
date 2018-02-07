@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/statusContentBg">
 
     <ProgressBar
         android:id="@+id/progress_bar1"
         style="@android:style/Widget.ProgressBar.Inverse"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:progress="50"
-        android:paddingTop="4dp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
+    <TextView
+        android:id="@+id/loadingTxtTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progress_bar1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dm050"
+        android:layout_marginRight="@dimen/dm050"
+        android:layout_marginTop="@dimen/dm015"
+        android:gravity="center"
+        android:text="加载中..."
+        android:textColor="@color/statusTipTxtColor"
+        android:visibility="visible" />
 </RelativeLayout>

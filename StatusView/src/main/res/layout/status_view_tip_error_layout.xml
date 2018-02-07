@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/statusRootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/statusContentBg">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/statusTipIcon"
+            android:layout_width="@dimen/dm200"
+            android:layout_height="@dimen/dm200"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/empty_nodata" />
+
+        <TextView
+            android:id="@+id/statusTipContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dm050"
+            android:layout_marginRight="@dimen/dm050"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dm015"
+            android:textColor="@color/statusTipTxtColor"
+            android:text="访问出错\n点击空白处刷新！" />
+    </LinearLayout>
+
+</RelativeLayout>
