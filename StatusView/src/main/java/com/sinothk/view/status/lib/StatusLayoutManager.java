@@ -82,9 +82,18 @@ public class StatusLayoutManager {
     public void showLoading() {
         rootFrameLayout.showLoading();
     }
+
     public void showLoading(String errorInfo) {
         rootFrameLayout.showLoading(errorInfo);
     }
+
+    public void showLoading(View progressView) {
+        rootFrameLayout.showLoading(progressView);
+    }
+
+//    public void showLoading(View progressView, String tipInfo) {
+//        rootFrameLayout.showLoading(progressView, tipInfo);
+//    }
 
     /**
      * 显示内容

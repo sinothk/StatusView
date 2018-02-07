@@ -11,7 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.sinothk.view.status.R;
 
 /**
  * Created by chenpengfei on 2016/12/15.
@@ -107,23 +111,53 @@ public class RootFrameLayout extends FrameLayout {
     public void showLoading(String textTip) {
         if (layoutSparseArray.get(LAYOUT_LOADING_ID) != null) {
             showHideViewById(LAYOUT_LOADING_ID);
-            loadingViewAddData(0, textTip);
+            loadingViewAddData(null, textTip);
         }
     }
-    private void loadingViewAddData(int iconImage, String textTip) {
+
+    public void showLoading(View progressView) {
+        if (layoutSparseArray.get(LAYOUT_LOADING_ID) != null) {
+            showHideViewById(LAYOUT_LOADING_ID);
+            loadingViewAddData(progressView, "");
+        }
+    }
+
+    public void showLoading(View progressView, String tipInfo) {
+        if (layoutSparseArray.get(LAYOUT_LOADING_ID) != null) {
+            showHideViewById(LAYOUT_LOADING_ID);
+            loadingViewAddData(progressView, tipInfo);
+        }
+    }
+
+    private void loadingViewAddData(View progressView, String textTip) {
 
         View loadingView = layoutSparseArray.get(LAYOUT_LOADING_ID);
-        View textView = loadingView.findViewById(mStatusLayoutManager.loadingTextTipId);
 
+        View textView = loadingView.findViewById(mStatusLayoutManager.loadingTextTipId);
         if (textView != null && textView instanceof TextView) {
             if (TextUtils.isEmpty(textTip)) {
                 textView.setVisibility(GONE);
-            }else{
+            } else {
                 textView.setVisibility(VISIBLE);
                 ((TextView) textView).setText(textTip);
             }
         }
+
+        ProgressBar defaultProgressBar = loadingView.findViewById(R.id.defaultProgressBar);
+        LinearLayout progressBarLayout = loadingView.findViewById(R.id.progressBarLayout);
+        if (progressBarLayout != null) {
+            if (progressView != null) {
+                progressBarLayout.addView(progressView);
+                progressBarLayout.setVisibility(VISIBLE);
+
+                defaultProgressBar.setVisibility(GONE);
+            } else {
+                progressBarLayout.setVisibility(GONE);
+                defaultProgressBar.setVisibility(VISIBLE); // 顯示默認
+            }
+        }
     }
+
     /**
      * 显示内容
      */

@@ -35,6 +35,16 @@ public class StatusViewBase {
         }
     }
 
+    public static void showLoading(View progressView) {
+        if (statusLayoutManager != null) {
+            statusLayoutManager.showLoading(progressView);
+        }
+    }
+//
+//    public static void showLoading(View progressView, String tipInfo) {
+//        statusLayoutManager.showLoading(progressView, tipInfo);
+//    }
+
     /**
      * 显示内容 ============================================
      */
@@ -124,4 +134,5 @@ public class StatusViewBase {
             statusLayoutManager.showNetWorkError(imgId, errorInfo);
         }
     }
+
 }

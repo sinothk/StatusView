@@ -35,20 +35,20 @@ public class StatusViewDemoActivity extends AppCompatActivity {
 
         //===========================================标题部分==============================================================
 //        TitleBar4Normal.setTitle("SINOTHK");
-//        TitleBar4Normal.setTitle("華維公社", R.color.white);
-        TitleBar4Normal.setTitle("華維公社", R.color.white, R.color.black);
+        TitleBar4Normal.setTitle("華維公社", R.color.white);
+//        TitleBar4Normal.setTitle("華維公社", R.color.white, R.color.black);
 
         //===========================================左标题部分==============================================================
-        TitleBar4Normal.setVisible(View.INVISIBLE);
+//        TitleBar4Normal.setVisible(View.INVISIBLE);
 //        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher);
-//        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, "消息(99+)");
-//        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(), "setTitleLeft:仅有图片", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, "消息(99+)");
+        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "setTitleLeft:仅有图片", Toast.LENGTH_SHORT).show();
+            }
+        });
 //        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, "发现", new View.OnClickListener() {
 //
 //            @Override
@@ -57,20 +57,20 @@ public class StatusViewDemoActivity extends AppCompatActivity {
 //            }
 //        });
         //===========================================右标题部分==============================================================
-//        TitleBar4Normal.setTitleRightTxt0("搜索", R.color.white, new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(), "setTitleRightTxt0", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//        TitleBar4Normal.setTitleRightTxt1("设置", R.color.white, new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getApplicationContext(), "setTitleRightTxt1", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        TitleBar4Normal.setTitleRightTxt0("搜索", R.color.white, new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "setTitleRightTxt0", Toast.LENGTH_SHORT).show();
+            }
+        });
+        TitleBar4Normal.setTitleRightTxt1("设置", R.color.white, new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "setTitleRightTxt1", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 //        TitleBar4Normal.setTitleRightIv0(R.mipmap.ic_launcher, new View.OnClickListener() {
 //
@@ -87,17 +87,19 @@ public class StatusViewDemoActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(), "setTitleRightIv1", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-
-//        TitleBar4Normal.setTitleRightTv0Visible(true);
-//        TitleBar4Normal.setTitleRightTv1Visible(true);
-
-//        TitleBar4Normal.setTitleRightIv0Visible(false);
-//        TitleBar4Normal.setTitleRightIv1Visible(false);
+//
+//        TitleBar4Normal.setTitleRightTv0Visible(true); // 设置Tv0隐藏
+//        TitleBar4Normal.setTitleRightTv1Visible(true); // 设置Tv1隐藏
+//        TitleBar4Normal.setTitleRightIv0Visible(false);// 设置Iv0隐藏
+//        TitleBar4Normal.setTitleRightIv1Visible(false);// 设置Iv1隐藏
 
         //=============================================处理内容============================================================
         // 状态布局调用
 //        StatusView.showLoading();
-        StatusView.showLoading("拼命加载中...");
+//        StatusView.showLoading("拼命加载中...");
+
+        View progressView = ProgressView.getView(this, "加载中");
+        StatusView.showLoading(progressView);
 
         new Handler().postDelayed(
                 new Runnable() {
@@ -106,19 +108,19 @@ public class StatusViewDemoActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                // 错误
-//                                StatusView.showError();
+//                                // 错误
+                                StatusView.showError();
 //                                StatusView.showError(R.mipmap.ic_launcher);
 //                                StatusView.showError("服务器错误");
 //                                StatusView.showError(R.mipmap.ic_launcher, "服务器错误");
-                                // 网络
+//                                // 网络
 //                                StatusView.showNetWorkError();
 //                                  StatusView.showNetWorkError(R.mipmap.ic_launcher);
 //                                StatusView.showNetWorkError("网络断开");
 //                                StatusView.showNetWorkError(R.mipmap.ic_launcher, "网络断开le");
-                                // 无数据
+//                                // 无数据
 //                                StatusView.showEmptyData();
-                                StatusView.showEmptyData("暂无数据");
+//                                StatusView.showEmptyData("暂无数据");
 //                                StatusView.showEmptyData(R.mipmap.ic_launcher);
 //                                StatusView.showEmptyData(R.mipmap.ic_launcher, "暂无数据");
 //                                StatusView.showContent();
