@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/statusRootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,6 +26,7 @@
             android:layout_marginLeft="@dimen/dm050"
             android:layout_marginRight="@dimen/dm050"
             android:gravity="center"
+            android:textSize="@dimen/dm024"
             android:layout_marginTop="@dimen/dm015"
             android:textColor="@color/statusTipTxtColor"
             android:text="访问出错\n点击空白处刷新！" />

@@ -22,6 +22,7 @@
         android:layout_marginTop="@dimen/dm015"
         android:gravity="center"
         android:text="加载中..."
+        android:textSize="@dimen/dm024"
         android:textColor="@color/statusTipTxtColor"
         android:visibility="visible" />
 </RelativeLayout>

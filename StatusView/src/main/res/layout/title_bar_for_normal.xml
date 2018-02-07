@@ -8,47 +8,28 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:id="@+id/titleBarRightImgView"
+        android:id="@+id/titleBarRightView"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dm086"
         android:layout_alignParentEnd="true"
         android:gravity="center"
-        android:visibility="gone">
-
-        <ImageView
-            android:id="@+id/titleBarRightIv0"
-            android:layout_width="@dimen/dm086"
-            android:layout_height="@dimen/dm086"
-            android:padding="4dp"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/titleBarRightIv1"
             android:layout_width="@dimen/dm086"
             android:layout_height="@dimen/dm086"
             android:padding="4dp"
+            android:visibility="gone"
             app:srcCompat="@android:drawable/btn_star_big_on" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/titleBarRightTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/dm086"
-        android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/titleBarRightTv0"
+        <ImageView
+            android:id="@+id/titleBarRightIv0"
             android:layout_width="@dimen/dm086"
             android:layout_height="@dimen/dm086"
-            android:gravity="center"
-            android:maxEms="2"
-            android:maxLines="1"
-            android:text="更多"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/dm025"
-            android:visibility="visible" />
+            android:padding="4dp"
+            android:visibility="gone"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
 
         <TextView
             android:id="@+id/titleBarRightTv1"
@@ -59,7 +40,22 @@
             android:maxLines="1"
             android:text="设置"
             android:textColor="#FFFFFF"
-            android:textSize="@dimen/dm025" />
+            android:textSize="@dimen/dm024"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/titleBarRightTv0"
+            android:layout_width="@dimen/dm086"
+            android:layout_height="@dimen/dm086"
+            android:gravity="center"
+            android:maxEms="2"
+            android:maxLines="1"
+            android:text="更多"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/dm024"
+            android:visibility="gone" />
+
+
     </LinearLayout>
 
     <LinearLayout
