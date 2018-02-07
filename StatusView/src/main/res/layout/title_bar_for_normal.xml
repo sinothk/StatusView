@@ -12,8 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dm086"
         android:layout_alignParentEnd="true"
-        android:gravity="center"
-        android:visibility="visible">
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/titleBarRightIv1"
@@ -33,29 +32,32 @@
 
         <TextView
             android:id="@+id/titleBarRightTv1"
-            android:layout_width="@dimen/dm096"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/dm086"
             android:gravity="center"
-            android:maxEms="2"
             android:maxLines="1"
+            android:paddingEnd="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingStart="8dp"
             android:text="设置"
             android:textColor="#FFFFFF"
-            android:textSize="@dimen/dm024"
-            android:visibility="gone" />
+            android:textSize="@dimen/dm024" />
 
         <TextView
             android:id="@+id/titleBarRightTv0"
-            android:layout_width="@dimen/dm086"
+            android:layout_width="wrap_content"
             android:layout_height="@dimen/dm086"
             android:gravity="center"
-            android:maxEms="2"
             android:maxLines="1"
+            android:paddingEnd="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingStart="8dp"
             android:text="更多"
             android:textColor="#FFFFFF"
             android:textSize="@dimen/dm024"
-            android:visibility="gone" />
-
-
+            android:visibility="visible" />
     </LinearLayout>
 
     <LinearLayout
