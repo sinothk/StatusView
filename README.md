@@ -82,9 +82,12 @@
 
         //=============================================处理内容============================================================
         // 状态布局调用
-//        StatusView.showLoading();
+        StatusView.showLoading();
         StatusView.showLoading("拼命加载中...");
-
+        
+        View progressView = ProgressView.getView(this, "加载中");
+        StatusView.showLoading(progressView);
+        
         new Handler().postDelayed(
                 new Runnable() {
                     @Override
