@@ -61,14 +61,14 @@ public class StatusViewDemoActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "setTitleRightTxt0", Toast.LENGTH_SHORT).show();
+                Toast.makeText(StatusViewDemoActivity.this, "setTitleRightTxt0", Toast.LENGTH_SHORT).show();
             }
         });
         TitleBar4Normal.setTitleRightTxt1("设置", R.color.white, new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "setTitleRightTxt1", Toast.LENGTH_SHORT).show();
+                Toast.makeText(StatusViewDemoActivity.this, "setTitleRightTxt1", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -109,7 +109,7 @@ public class StatusViewDemoActivity extends AppCompatActivity {
                             @Override
                             public void run() {
 //                                // 错误
-                                StatusView.showError();
+//                                StatusView.showError();
 //                                StatusView.showError(R.mipmap.ic_launcher);
 //                                StatusView.showError("服务器错误");
 //                                StatusView.showError(R.mipmap.ic_launcher, "服务器错误");
@@ -123,7 +123,7 @@ public class StatusViewDemoActivity extends AppCompatActivity {
 //                                StatusView.showEmptyData("暂无数据");
 //                                StatusView.showEmptyData(R.mipmap.ic_launcher);
 //                                StatusView.showEmptyData(R.mipmap.ic_launcher, "暂无数据");
-//                                StatusView.showContent();
+                                StatusView.showContent();
                             }
                         });
                     }
