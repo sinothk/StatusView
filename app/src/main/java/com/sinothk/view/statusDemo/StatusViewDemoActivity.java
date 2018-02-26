@@ -34,21 +34,21 @@ public class StatusViewDemoActivity extends AppCompatActivity {
 //        }));
 
         //===========================================标题部分==============================================================
-//        TitleBar4Normal.setTitle("SINOTHK");
-        TitleBar4Normal.setTitle("華維公社", R.color.white);
+        TitleBar4Normal.setTitle("SINOTHK");
+//        TitleBar4Normal.setTitle("華維公社", R.color.white);
 //        TitleBar4Normal.setTitle("華維公社", R.color.white, R.color.black);
 
         //===========================================左标题部分==============================================================
 //        TitleBar4Normal.setVisible(View.INVISIBLE);
 //        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher);
         TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, "消息(99+)");
-        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "setTitleLeft:仅有图片", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(), "setTitleLeft:仅有图片", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 //        TitleBar4Normal.setTitleLeft(R.mipmap.ic_launcher, "发现", new View.OnClickListener() {
 //
 //            @Override
