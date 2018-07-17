@@ -1,5 +1,6 @@
 # StatusView
 简单的StatusView
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
