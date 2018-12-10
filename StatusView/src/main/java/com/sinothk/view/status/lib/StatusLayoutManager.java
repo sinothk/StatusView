@@ -27,6 +27,7 @@ public class StatusLayoutManager {
     final int loadingTextTipId;
 
     final int contentLayoutResId;
+
     final int retryViewId;
 
     final int emptyDataIconImageId;
@@ -56,6 +57,7 @@ public class StatusLayoutManager {
         this.errorVs = builder.errorVs;
         this.errorRetryViewId = builder.errorRetryViewId;
         this.contentLayoutResId = builder.contentLayoutResId;
+
         this.onShowHideViewListener = builder.onShowHideViewListener;
         this.retryViewId = builder.retryViewId;
         this.onRetryListener = builder.onRetryListener;
@@ -174,6 +176,7 @@ public class StatusLayoutManager {
         private int loadingTextTipId;
 
         private int contentLayoutResId;
+
         private ViewStub netWorkErrorVs;
         private int netWorkErrorRetryViewId;
         private int netWorkErrorIconImageId;

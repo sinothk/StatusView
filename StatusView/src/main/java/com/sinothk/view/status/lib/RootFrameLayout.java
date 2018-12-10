@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -85,6 +86,7 @@ public class RootFrameLayout extends FrameLayout {
     private void addAllLayoutToRootLayout() {
         if (mStatusLayoutManager.contentLayoutResId != 0)
             addLayoutResId(mStatusLayoutManager.contentLayoutResId, RootFrameLayout.LAYOUT_CONTENT_ID);
+
         if (mStatusLayoutManager.loadingLayoutResId != 0)
             addLayoutResId(mStatusLayoutManager.loadingLayoutResId, RootFrameLayout.LAYOUT_LOADING_ID);
 

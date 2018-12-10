@@ -1,9 +1,11 @@
-package com.sinothk.view.statusDemo;
+package com.sinothk.view.status.base;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+
+import com.sinothk.view.status.R;
 
 
 /**

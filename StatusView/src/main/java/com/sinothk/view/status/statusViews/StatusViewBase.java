@@ -17,9 +17,6 @@ public class StatusViewBase {
     protected static StatusLayoutManager statusLayoutManager;
     private static View.OnClickListener onRetryListener;
 
-    public static void init() {
-    }
-
     /**
      * 加载 ========================================
      */
