@@ -13,3 +13,5 @@ StatusView/src/test/
 StatusView/.gitignore
 app/.gitignore
 *.apk
+app/build/
+StatusView/build/
