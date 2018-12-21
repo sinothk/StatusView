@@ -20,14 +20,6 @@ import com.sinothk.view.status.statusViews.StatusView;
  */
 public abstract class StatusViewBaseActivity extends AppCompatActivity {
 
-//    private View titleBarView;
-//    private int contentLayoutId;
-//
-//    protected void setLayout(View titleBarView, int contentId) {
-//        this.titleBarView = titleBarView;
-//        this.contentLayoutId = contentId;
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

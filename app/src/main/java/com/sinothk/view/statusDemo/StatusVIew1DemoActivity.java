@@ -15,7 +15,13 @@ public class StatusVIew1DemoActivity extends StatusViewBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        StatusView.showLoading(ProgressView.getView(this));
+        StatusView.showLoading(ProgressView.getView(this,"加载中"));
+
+        refreshView();
+    }
+
+    private void refreshView() {
+        StatusView.showLoading();
 
         new Handler().postDelayed(
                 new Runnable() {
@@ -27,7 +33,7 @@ public class StatusVIew1DemoActivity extends StatusViewBaseActivity {
 //                                // 错误
 //                                StatusView.showError();
 //                                StatusView.showError(R.mipmap.ic_launcher);
-                                StatusView.showError("服务器错误");
+//                                StatusView.showError("服务器错误");
 //                                StatusView.showError(R.mipmap.ic_launcher, "服务器错误");
 //                                // 网络
 //                                StatusView.showNetWorkError();
@@ -36,19 +42,24 @@ public class StatusVIew1DemoActivity extends StatusViewBaseActivity {
 //                                StatusView.showNetWorkError(R.mipmap.ic_launcher, "网络断开");
 //                                // 无数据
 //                                StatusView.showEmptyData();
-//                                StatusView.showEmptyData("暂无数据");
+                                StatusView.showEmptyData("暂无数据");
 //                                StatusView.showEmptyData(R.mipmap.ic_launcher);
 //                                StatusView.showEmptyData(R.mipmap.ic_launcher, "暂无数据");
 //                                StatusView.showContent();
                             }
                         });
                     }
-                }, 3000);
+                }, 5000);
     }
 
     @Override
     protected View.OnClickListener getContentRetryListener() {
-        return null;
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshView();
+            }
+        };
     }
 
     @Override

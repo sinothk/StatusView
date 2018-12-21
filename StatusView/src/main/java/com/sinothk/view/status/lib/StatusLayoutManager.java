@@ -28,7 +28,7 @@ public class StatusLayoutManager {
 
     final int contentLayoutResId;
 
-    final int retryViewId;
+//    final int retryViewId;
 
     final int emptyDataIconImageId;
     final int emptyDataTextTipId;
@@ -59,7 +59,7 @@ public class StatusLayoutManager {
         this.contentLayoutResId = builder.contentLayoutResId;
 
         this.onShowHideViewListener = builder.onShowHideViewListener;
-        this.retryViewId = builder.retryViewId;
+//        this.retryViewId = builder.retryViewId;
         this.onRetryListener = builder.onRetryListener;
         this.emptyDataIconImageId = builder.emptyDataIconImageId;
         this.emptyDataTextTipId = builder.emptyDataTextTipId;
@@ -186,7 +186,7 @@ public class StatusLayoutManager {
         private int emptyDataRetryViewId;
         private ViewStub errorVs;
         private int errorRetryViewId;
-        private int retryViewId;
+//        private int retryViewId;
         private int emptyDataIconImageId;
         private int emptyDataTextTipId;
         private int errorIconImageId;
@@ -275,10 +275,10 @@ public class StatusLayoutManager {
             return this;
         }
 
-        public Builder retryViewId(int retryViewId) {
-            this.retryViewId = retryViewId;
-            return this;
-        }
+//        public Builder retryViewId(int retryViewId) {
+//            this.retryViewId = retryViewId;
+//            return this;
+//        }
 
         public Builder emptyDataIconImageId(int emptyDataIconImageId) {
             this.emptyDataIconImageId = emptyDataIconImageId;

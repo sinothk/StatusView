@@ -342,8 +342,11 @@ public class RootFrameLayout extends FrameLayout {
      * 重试加载
      */
     private void retryLoad(View view, int id) {
-        View retryView = view.findViewById(mStatusLayoutManager.retryViewId != 0 ? mStatusLayoutManager.retryViewId : id);
+        if (id == 0) return;
+
+        View retryView = view.findViewById(id);
         if (retryView == null || mStatusLayoutManager.onRetryListener == null) return;
+
         retryView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
