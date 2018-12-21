@@ -12,7 +12,7 @@
    ## Step 2. Add the dependency
 
         	dependencies {
-	           implementation 'com.github.sinothk:StatusView:2.0.1221'
+	           implementation 'com.github.sinothk:StatusView:2.0.1222'
 	        }
 
  
