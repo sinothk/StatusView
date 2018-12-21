@@ -31,5 +31,5 @@ dependencies {
 
     implementation project(':StatusView')
 
-//    implementation 'com.github.sinothk:StatusView:2.0.1210'
+//    implementation 'com.github.sinothk:StatusView:2.0.1221'
 }

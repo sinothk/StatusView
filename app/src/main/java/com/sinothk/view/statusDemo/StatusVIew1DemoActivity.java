@@ -5,7 +5,6 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.sinothk.view.status.base.ProgressView;
 import com.sinothk.view.status.base.StatusViewBaseActivity;
 import com.sinothk.view.status.statusViews.StatusView;
 
@@ -15,7 +14,7 @@ public class StatusVIew1DemoActivity extends StatusViewBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        StatusView.showLoading(ProgressView.getView(this,"加载中"));
+        StatusView.showLoading("加载中");//ProgressView.getView(this,"加载中")
 
         refreshView();
     }
