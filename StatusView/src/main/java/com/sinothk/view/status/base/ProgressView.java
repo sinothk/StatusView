@@ -18,6 +18,11 @@ import com.sinothk.view.status.R;
  * <pre>
  */
 public class ProgressView {
+    public static View getView(Activity currActivity) {
+        View view = LayoutInflater.from(currActivity).inflate(R.layout.progress_view_comm, null);
+        return view;
+    }
+
     public static View getView(Activity currActivity, String tipInfo) {
         View view = LayoutInflater.from(currActivity).inflate(R.layout.progress_view, null);
         TextView loadingTxtTip = view.findViewById(R.id.loadingTxtTip);

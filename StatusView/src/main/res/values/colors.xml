@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="titleBg">#3C3F41</color>
+    <color name="titleBg">#1ba4ff</color>
 
     <color name="colorPrimary">@color/titleBg</color>
     <color name="colorPrimaryDark">@color/titleBg</color>

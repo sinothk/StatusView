@@ -15,7 +15,7 @@ public class StatusVIew1DemoActivity extends StatusViewBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        StatusView.showLoading(ProgressView.getView(this, "加载中"));
+        StatusView.showLoading(ProgressView.getView(this));
 
         new Handler().postDelayed(
                 new Runnable() {

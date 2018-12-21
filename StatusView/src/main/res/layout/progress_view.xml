@@ -7,10 +7,9 @@
 
     <ProgressBar
         android:id="@+id/defaultProgressBar"
-        style="@android:style/Widget.ProgressBar.Inverse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible" />
+        android:progressDrawable="@drawable/progress_style1" />
 
     <TextView
         android:id="@+id/loadingTxtTip"

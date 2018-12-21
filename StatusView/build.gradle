@@ -31,4 +31,6 @@ dependencies {
     })
     implementation "com.android.support:appcompat-v7:$APPCOMPAT_VERSION"
     testImplementation 'junit:junit:4.12'
+
+    implementation 'com.github.sinothk:ProgressView:1.0.1221'
 }
